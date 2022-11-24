@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Position__c</fullName>
+    <description>Players position</description>
+    <externalId>false</externalId>
+    <label>Position</label>
+    <required>true</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Goalkeeper</fullName>
+                <default>false</default>
+                <label>Goalkeeper</label>
+            </value>
+            <value>
+                <fullName>Defense</fullName>
+                <default>false</default>
+                <label>Defense</label>
+            </value>
+            <value>
+                <fullName>Midfield</fullName>
+                <default>false</default>
+                <label>Midfield</label>
+            </value>
+            <value>
+                <fullName>Forward</fullName>
+                <default>false</default>
+                <label>Forward</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>
