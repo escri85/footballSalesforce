@@ -1,0 +1,20 @@
+
+<template>
+  <div class="card">
+    <img class="img-avatar" src={player.Image__c} alt={player.Image__c} />
+    <div class="card-text">
+      <div class="portada"></div>
+      <div class="title-total">
+        <div class="title">{player.Position__c}</div>
+        <h2>{player.Name}</h2>
+        <div class="actions">
+          <lightning-button
+            class="button"
+            label="view Details"
+            slot="actions"
+          ></lightning-button>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
