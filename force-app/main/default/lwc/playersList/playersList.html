@@ -1,7 +1,13 @@
 <template>
-    <template for:each={players} for:item="jug">
-    <div key={jug.id}>
-        <c-players-tile player={jug}></c-players-tile>
+  <div class="slds-align_absolute-center">
+    <div class="slds-grid slds-wrap slds-grid_align-spread grid">
+      <template if:true={player.data}>
+        <template for:each={player.data} for:item="jug">
+          <div key={jug.id}>
+            <c-players-tile player={jug} class="slds col slds-var-m-around_small"></c-players-tile>
+          </div>
+        </template>
+      </template>
     </div>
-    </template>
+  </div>
 </template>
