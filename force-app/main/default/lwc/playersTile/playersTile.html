@@ -1,5 +1,4 @@
 <template>
-
     <div class="card">
       <img class="img-avatar" src={player.Image__c} alt={player.Image__c} />
       <div class="card-text">
@@ -9,10 +8,17 @@
           <h2>{player.Name}</h2>
           <div class="actions">
             <lightning-button
-              class="button"
-              label="view Details"
-              slot="actions"
+            class="button"
+            label="view Details"
+            slot="actions"
+            onclick={navigateToRecordViewPage}
             ></lightning-button>
+            <template if:true={isForward}>
+              <lightning-icon icon-name="custom:custom3" alternative-text="Forward" title="Forward"></lightning-icon>
+            </template>
+            <template if:false={isForward}>
+              <lightning-icon icon-name="action:approval" alternative-text="Approved" title="Approved"></lightning-icon>
+            </template>
           </div>
         </div>
       </div>

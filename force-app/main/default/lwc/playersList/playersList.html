@@ -1,11 +1,23 @@
 <template>
   <div class="slds-align_absolute-center">
     <div class="slds-grid slds-wrap slds-grid_align-spread grid">
-      <template if:true={player.data}>
-        <template for:each={player.data} for:item="jug">
+      <lightning-input
+        type="text"
+        placeholder="Enter Name"
+        onchange={handleChange}
+      >
+      </lightning-input>
+      <template if:true={players.data}>
+        <template for:each={players.data} for:item="jug">
           <div key={jug.id}>
-            <c-players-tile player={jug} class="slds col slds-var-m-around_small"></c-players-tile>
+            <c-players-tile
+              player={jug}
+              class="slds col slds-var-m-around_small"
+            ></c-players-tile>
           </div>
+        </template>
+        <template if:true={players.error}>
+          Error retriving the players
         </template>
       </template>
     </div>

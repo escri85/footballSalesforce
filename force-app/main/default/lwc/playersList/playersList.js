@@ -1,8 +1,15 @@
 import { LightningElement, wire} from 'lwc';
-import getAllPlayer from '@salesforce/apex/PlayersServices.getAllPlayer'
+import getFilteredPlayers from '@salesforce/apex/PlayersServices.getFilteredPlayers';
 export default class PlayersList extends LightningElement {
 
-  @wire(getAllPlayer) player;
+  searchText ="";
 
 
+  @wire(getFilteredPlayers, {searchText: "$searchText",})players;
+
+  handleChange(event){
+    const evento = event.target.value;
+    console.log('esto es el log ' + evento);
+    this.searchText = evento;
+  }
 }
